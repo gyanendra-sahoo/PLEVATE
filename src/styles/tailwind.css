@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* New Brand Color System */
+    --color-background: #D1BC9C; /* Warm Beige - Background canvas and cards */
+    --color-foreground: #000000; /* Black - Text and icons */
+    --color-border: #1B1918; /* Charcoal - Secondary text and outlines */
+    --color-input: #D1BC9C; /* Warm Beige inputs */
+    --color-ring: #C4A484; /* Light Coffee - Focus rings */
+    
+    /* Card Colors */
+    --color-card: #D1BC9C; /* Warm Beige */
+    --color-card-foreground: #000000; /* Black */
+    
+    /* Muted Colors */
+    --color-muted: #C89D5B; /* Golden Sand - Secondary accent */
+    --color-muted-foreground: #000000; /* Black - Updated to ensure all text is black */
+    
+    /* Primary Colors */
+    --color-primary: #C4A484; /* Light Coffee - Primary CTA and highlights */
+    --color-primary-foreground: #D1BC9C; /* Warm Beige */
+    
+    /* Secondary Colors */
+    --color-secondary: #C87347; /* Burnt Orange - Section header accent */
+    --color-secondary-foreground: #D1BC9C; /* Warm Beige */
+    
+    /* Accent Colors */
+    --color-accent: #C89D5B; /* Golden Sand - Secondary accent */
+    --color-accent-foreground: #000000; /* Black */
+    
+    /* Popover Colors */
+    --color-popover: #D1BC9C; /* Warm Beige */
+    --color-popover-foreground: #000000; /* Black */
+    
+    /* Status Colors */
+    --color-success: #C4A484; /* Light Coffee */
+    --color-success-foreground: #D1BC9C; /* Warm Beige */
+    
+    --color-warning: #C87347; /* Burnt Orange */
+    --color-warning-foreground: #D1BC9C; /* Warm Beige */
+    
+    --color-error: #C87347; /* Burnt Orange */
+    --color-error-foreground: #D1BC9C; /* Warm Beige */
+    
+    --color-destructive: #C87347; /* Burnt Orange */
+    --color-destructive-foreground: #D1BC9C; /* Warm Beige */
+    
+    /* Brand Specific Colors */
+    --color-concrete: #1B1918; /* Charcoal */
+    --color-concrete-light: #C89D5B; /* Golden Sand */
+    --color-conversion: #C4A484; /* Light Coffee */
+    --color-text-primary: #000000; /* Black */
+    --color-text-secondary: #000000; /* Black - Updated to ensure all text is black */
+  }
+
+  /* Universal text color enforcement */
+  * {
+    @apply border-border;
+    color: #000000 !important; /* Force all text elements to be pure black */
+  }
+
+  html {
+    scroll-behavior: auto; /* Respect reduced motion by default */
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.2; /* Tighter line height for brutalist look */
+    color: #000000 !important; /* Ensure body text is pure black */
+  }
+
+  /* Comprehensive text element coverage */
+  h1, h2, h3, h4, h5, h6,
+  p, span, a, div, li, td, th, label, button,
+  input, textarea, select, option,
+  strong, em, b, i, u, s,
+  blockquote, pre, code,
+  figcaption, caption,
+  small, mark, sub, sup,
+  time, address, cite, dfn, kbd, samp, var {
+    font-family: 'Inter', sans-serif;
+    color: #000000 !important; /* Force pure black text */
+  }
+
+  /* Specific heading styles */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 900; /* Extra bold for brutalist impact */
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  /* Link states - keep black with underline on hover */
+  a, a:link, a:visited, a:active {
+    color: #000000 !important; /* Pure black for all link states */
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #000000 !important; /* Stay black on hover */
+    text-decoration: underline; /* Add underline on hover */
+  }
+
+  /* Button text enforcement */
+  button, .btn, [role="button"] {
+    color: #000000 !important;
+  }
+
+  /* Form element text */
+  input, textarea, select, option {
+    color: #000000 !important;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: #000000 !important;
+    opacity: 0.7;
+  }
+
+  /* Table elements */
+  table, thead, tbody, tfoot, tr, td, th {
+    color: #000000 !important;
+  }
+
+  /* Navigation elements */
+  nav, nav a, nav button, nav span {
+    color: #000000 !important;
+  }
+
+  /* Form labels */
+  label, legend, fieldset {
+    color: #000000 !important;
+  }
+
+  /* List elements */
+  ul, ol, li, dl, dt, dd {
+    color: #000000 !important;
+  }
+
+  /* Pseudo-elements */
+  *::before, *::after {
+    color: inherit !important;
+  }
+
+  /* Brutalist 12-Column Grid System with Brand Colors */
+  .brutalist-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1px;
+    border: 1px solid #1B1918;
+  }
+
+  .brutalist-grid > * {
+    border-right: 1px solid #1B1918;
+    border-bottom: 1px solid #1B1918;
+  }
+
+  .brutalist-grid > *:nth-child(12n) {
+    border-right: none;
+  }
+
+  /* Brutalist Box Shadows with Brand Colors */
+  .brutalist-shadow {
+    box-shadow: 4px 4px 0 #1B1918;
+  }
+
+  .brutalist-shadow-lg {
+    box-shadow: 8px 8px 0 #1B1918;
+  }
+
+  /* Brutalist Borders with Brand Colors */
+  .brutalist-border {
+    border: 3px solid #1B1918;
+  }
+
+  .brutalist-border-thin {
+    border: 1px solid #1B1918;
+  }
+
+  /* Remove all animations for users with reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Brutalist Typography with black text enforcement */
+  .brutalist-heading {
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    color: #000000 !important; /* Ensure brutalist headings are pure black */
+  }
+
+  .brutalist-text {
+    font-weight: 400;
+    letter-spacing: 0;
+    color: #000000 !important; /* Ensure brutalist text is pure black */
+  }
+}
+
+@layer utilities {
+  /* 12-Column Grid Utilities */
+  .col-span-1 { grid-column: span 1 / span 1; }
+  .col-span-2 { grid-column: span 2 / span 2; }
+  .col-span-3 { grid-column: span 3 / span 3; }
+  .col-span-4 { grid-column: span 4 / span 4; }
+  .col-span-5 { grid-column: span 5 / span 5; }
+  .col-span-6 { grid-column: span 6 / span 6; }
+  .col-span-7 { grid-column: span 7 / span 7; }
+  .col-span-8 { grid-column: span 8 / span 8; }
+  .col-span-9 { grid-column: span 9 / span 9; }
+  .col-span-10 { grid-column: span 10 / span 10; }
+  .col-span-11 { grid-column: span 11 / span 11; }
+  .col-span-12 { grid-column: span 12 / span 12; }
+
+  /* Brutalist Layout Helpers */
+  .brutalist-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Motion Respect Utilities */
+  .motion-safe-animate {
+    animation: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .motion-safe-animate {
+      animation: inherit;
+    }
+  }
+
+  /* Enhanced text color override utilities */
+  .text-black-force {
+    color: #000000 !important;
+  }
+
+  .text-black-all * {
+    color: #000000 !important;
+  }
+
+  /* Specific utility classes for comprehensive coverage */
+  .nav-black a, .nav-black button, .nav-black span {
+    color: #000000 !important;
+  }
+
+  .nav-black a:hover {
+    color: #000000 !important;
+    text-decoration: underline;
+  }
+
+  .form-black input, .form-black textarea, .form-black select, .form-black label {
+    color: #000000 !important;
+  }
+
+  .table-black td, .table-black th, .table-black caption {
+    color: #000000 !important;
+  }
+
+  .button-black, .btn-black {
+    color: #000000 !important;
+  }
+}
