@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Header from "../../components/ui/Header";
 import HeroSection from "./components/HeroSection";
 import WorkShowcase from "./components/WorkShowcase";
@@ -29,7 +30,6 @@ const Homepage = () => {
       <footer className="bg-background border-t-2 border-concrete py-12 mt-12">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
-
             {/* Brand */}
             <div className="md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
@@ -62,10 +62,18 @@ const Homepage = () => {
             <div>
               <h4 className="font-bold text-primary mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-muted-foreground brutalist-text">
-                <li><a href="/services" className="hover:underline">Brand Identity</a></li>
-                <li><a href="/services" className="hover:underline">Digital Experience</a></li>
-                <li><a href="/services" className="hover:underline">Brand Strategy</a></li>
-                <li><a href="/services" className="hover:underline">Motion Design</a></li>
+                <li>
+                  <Link to="/services" className="hover:underline">Brand Identity</Link>
+                </li>
+                <li>
+                  <Link to="/services" className="hover:underline">Digital Experience</Link>
+                </li>
+                <li>
+                  <Link to="/services" className="hover:underline">Brand Strategy</Link>
+                </li>
+                <li>
+                  <Link to="/services" className="hover:underline">Motion Design</Link>
+                </li>
               </ul>
             </div>
 
@@ -73,10 +81,10 @@ const Homepage = () => {
             <div>
               <h4 className="font-bold text-primary mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-muted-foreground brutalist-text">
-                <li><a href="/about" className="hover:underline">About</a></li>
-                <li><a href="/case-study" className="hover:underline">Case Studies</a></li>
-                <li><a href="/process" className="hover:underline">Process</a></li>
-                <li><a href="/contact" className="hover:underline">Contact</a></li>
+                <li><Link to="/about" className="hover:underline">About</Link></li>
+                <li><Link to="/case-study" className="hover:underline">Case Studies</Link></li>
+                <li><Link to="/process" className="hover:underline">Process</Link></li>
+                <li><Link to="/contact" className="hover:underline">Contact</Link></li>
               </ul>
             </div>
           </div>
@@ -87,8 +95,8 @@ const Homepage = () => {
               © {new Date().getFullYear()} Plevate. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-sm hover:underline">Privacy Policy</a>
-              <a href="#" className="text-sm hover:underline">Terms of Service</a>
+              <Link to="#" className="text-sm hover:underline">Privacy Policy</Link>
+              <Link to="#" className="text-sm hover:underline">Terms of Service</Link>
             </div>
           </div>
         </div>
